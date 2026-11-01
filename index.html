@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lowbazz – Quick commerce powered by local stores</title>
+<meta name="description" content="Lowbazz turns neighbourhood shops across India into fulfilment points, so customers get everyday essentials delivered in minutes.">
+<link rel="icon" type="image/svg+xml" href="logo/lowbazz-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--soft:#F5F0FF;--card:#fff;--ink:#1B1033;--mut:#5E5578;--line:#E6DDF7;--p:#6D28D9;--pd:#4C1D95;--pl:#A78BFA;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#120A24;--soft:#1B1033;--card:#221542;--ink:#F4EFFF;--mut:#B7AAD6;--line:#3A2A66;--p:#8B5CF6;color-scheme:dark}}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--pl);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font:800 22px "Bricolage Grotesque",sans-serif}
+.logo i{width:32px;height:32px;border-radius:10px 10px 10px 2px;background:linear-gradient(135deg,var(--p),var(--pd));display:grid;place-items:center;color:#fff;font-style:normal;font-size:17px}
+.links{display:flex;gap:26px;font-weight:500;color:var(--mut);font-size:15px}
+.links a:hover{color:var(--p)}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;background:var(--p);color:#fff;font-weight:600;border:0;cursor:pointer;font-size:15px;transition:transform .15s,background .15s}
+.btn:hover{background:var(--pd);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--p);border:1.5px solid var(--p)}
+.btn.ghost:hover{background:var(--soft)}
+.btn.sm{padding:9px 18px}
+section{padding:84px 0}
+.alt{background:var(--soft)}
+.tag{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--soft);color:var(--p);font-weight:600;font-size:13px;border:1px solid var(--line)}
+h2{font-size:clamp(30px,4.4vw,46px);font-weight:800;max-width:720px}
+.lead{color:var(--mut);font-size:18px;max-width:640px;margin:16px 0 0}
+.hero{padding:64px 0 90px;background:radial-gradient(900px 420px at 85% 0,color-mix(in srgb,var(--pl) 30%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-size:clamp(40px,6.2vw,70px);font-weight:800;margin:20px 0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.note{margin-top:22px;color:var(--mut);font-size:14px}
+.track{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 30px 60px -30px rgba(76,29,149,.45)}
+.track .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.eta{background:var(--p);color:#fff;border-radius:16px;padding:8px 14px;font:800 20px "Bricolage Grotesque",sans-serif}
+.step{display:flex;gap:14px;padding:14px 0;border-top:1px dashed var(--line);align-items:flex-start}
+.dot{flex:none;width:34px;height:34px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-size:16px;border:1px solid var(--line)}
+.step.on .dot{background:var(--p);border-color:var(--p);color:#fff}
+.step b{display:block;font-size:15px}.step span{color:var(--mut);font-size:13.5px}
+.step.live .dot{animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(139,92,246,.55)}100%{box-shadow:0 0 0 14px rgba(139,92,246,0)}}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.card h3{font-size:22px;margin:14px 0 8px}
+.card p{margin:0;color:var(--mut);font-size:15.5px}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:22px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px;counter-reset:s}
+.flow div{position:relative;padding-top:56px}
+.flow div::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:42px;height:42px;border-radius:50%;background:var(--p);color:#fff;display:grid;place-items:center;font:800 18px "Bricolage Grotesque",sans-serif}
+.flow div::after{content:"";position:absolute;top:21px;left:52px;right:-8px;border-top:2px dashed var(--pl)}
+.flow div:last-child::after{display:none}
+.flow h3{font-size:19px;margin-bottom:6px}.flow p{margin:0;color:var(--mut);font-size:15px}
+.tbl{margin-top:40px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+th{background:var(--soft);font-family:"Bricolage Grotesque",sans-serif;font-size:16px}
+th:last-child{color:var(--p)}td:first-child{font-weight:600}td:last-child{color:var(--p);font-weight:600}
+tr:last-child td{border-bottom:0}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.who ul{margin:14px 0 0;padding:0;list-style:none}
+.who li{padding:7px 0 7px 26px;position:relative;color:var(--mut);font-size:15px}
+.who li::before{content:"✓";position:absolute;left:0;color:var(--p);font-weight:800}
+.band{background:linear-gradient(135deg,var(--pd),var(--p));color:#fff;border-radius:32px;padding:56px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.band h2{color:#fff}.band p{color:#E9DDFF;margin:14px 0 0}
+form{display:grid;gap:12px}
+input,select,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid transparent;font:inherit;background:#fff;color:#1B1033}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--p);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--mut);margin:10px 0 0;max-width:720px}
+footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+#ok{display:none;color:#fff;font-weight:600}
+@media (max-width:860px){
+.links{display:none}
+.hero .wrap,.band{grid-template-columns:1fr}
+.grid3,.who{grid-template-columns:1fr}
+.flow{grid-template-columns:1fr 1fr;row-gap:36px}.flow div::after{display:none}
+section{padding:60px 0}.band{padding:36px 24px}}
+@media (prefers-reduced-motion:reduce){.step.live .dot{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top" aria-label="Lowbazz home"><svg class="mark" width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#4C1D95"/></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lg)"/><path d="M9 10H31V17a3.67 3.67 0 0 1-7.33 0 3.67 3.67 0 0 1-7.34 0A3.67 3.67 0 0 1 9 17Z" fill="#fff"/><rect x="8" y="27" width="8" height="2.4" rx="1.2" fill="#fff" opacity=".55"/><rect x="11" y="31.5" width="6" height="2.4" rx="1.2" fill="#fff" opacity=".35"/><circle cx="24" cy="29.5" r="4" fill="#fff"/><circle cx="24" cy="29.5" r="1.6" fill="#6D28D9"/></svg>Lowbazz</a>
+<div class="links"><a href="#how">How it works</a><a href="#why">Why local stores</a><a href="#partners">For partners</a><a href="#faq">FAQ</a></div>
+<a class="btn sm" href="#contact">Get in touch</a>
+</nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div>
+<span class="tag">Quick commerce, built on local stores</span>
+<h1>Your neighbourhood shop, delivered in minutes.</h1>
+<p class="lead">Lowbazz is a technology platform that connects customers to the kirana, pharmacy and general stores already on their street. No dark stores, no new warehouses. Just the shop next door, made instant.</p>
+<div class="cta"><a class="btn" href="#contact">Partner with us</a><a class="btn ghost" href="#how">See how it works</a></div>
+<p class="note">Launching soon. Join the early-access list for stores and delivery partners.</p>
+</div>
+<div class="track" aria-label="Example of an order being tracked">
+<div class="top"><div><b>Order #1042</b><br><span style="color:var(--mut);font-size:13px">Sample tracking view</span></div><div class="eta">12 min</div></div>
+<div class="step on"><div class="dot">✓</div><div><b>Order placed</b><span>Milk, bread, eggs and 3 more items</span></div></div>
+<div class="step on"><div class="dot">🏪</div><div><b>Sharma General Store accepted</b><span>Nearest shop with every item in stock · 0.6 km</span></div></div>
+<div class="step on live"><div class="dot">🛵</div><div><b>Rider is picking up</b><span>Assigned automatically from nearby partners</span></div></div>
+<div class="step"><div class="dot">🏠</div><div><b>Arriving at your door</b><span>Live location and OTP handover</span></div></div>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<span class="tag">How it works</span>
+<h2 style="margin-top:16px">From tap to doorstep in four steps</h2>
+<div class="flow">
+<div><h3>Customer orders</h3><p>Browse live stock from shops around them and check out in a few taps.</p></div>
+<div><h3>Smart matching</h3><p>Our engine picks the closest store that has every item available right now.</p></div>
+<div><h3>Store packs</h3><p>The shop gets the order on its app, confirms and packs it in minutes.</p></div>
+<div><h3>Rider delivers</h3><p>A nearby delivery partner collects it and tracks it live to the door.</p></div>
+</div></div></section>
+
+<section id="why" class="alt"><div class="wrap">
+<span class="tag">Why local stores</span>
+<h2 style="margin-top:16px">India already has millions of dark stores. We just switch them on.</h2>
+<p class="lead">Every neighbourhood shop is close to its customers and already stocked with daily essentials. Lowbazz adds the software layer that makes them fast, visible and online.</p>
+<div class="tbl"><div class="scroll"><table>
+<thead><tr><th></th><th>Dedicated dark-store model</th><th>Lowbazz local-store model</th></tr></thead>
+<tbody>
+<tr><td>Inventory</td><td>Bought and held by the platform</td><td>Already owned by the shop</td></tr>
+<tr><td>Space and setup</td><td>New leased warehouses</td><td>Existing shops, live in days</td></tr>
+<tr><td>Expansion</td><td>City by city, high upfront cost</td><td>Lane by lane, wherever shops join</td></tr>
+<tr><td>Delivery distance</td><td>Often several km</td><td>Short hops from the nearest shop</td></tr>
+<tr><td>Shop owners</td><td>Competed against</td><td>Included and earning more</td></tr>
+</tbody></table></div></div>
+</div></section>
+
+<section><div class="wrap">
+<span class="tag">The platform</span>
+<h2 style="margin-top:16px">Everything a local shop needs to deliver like a pro</h2>
+<div class="grid3">
+<div class="card"><div class="ic">📍</div><h3>Hyperlocal discovery</h3><p>Customers see only what is nearby and in stock, so every order can be fulfilled fast.</p></div>
+<div class="card"><div class="ic">📦</div><h3>Live inventory sync</h3><p>Shops update stock with a quick scan or tap, which avoids missing items and cancellations.</p></div>
+<div class="card"><div class="ic">🧠</div><h3>Smart order routing</h3><p>Orders go to the closest shop that can complete them. Split-basket support can follow.</p></div>
+<div class="card"><div class="ic">🛵</div><h3>Rider dispatch</h3><p>Automatic assignment, batching and live tracking keep every delivery short.</p></div>
+<div class="card"><div class="ic">💳</div><h3>Payments and settlements</h3><p>UPI, cards and cash on delivery for customers, with clear payouts for stores.</p></div>
+<div class="card"><div class="ic">📊</div><h3>Store dashboard</h3><p>Orders, earnings and top-selling items in one simple view, in the shop's own language.</p></div>
+</div></div></section>
+
+<section id="partners" class="alt"><div class="wrap">
+<span class="tag">Built for everyone in the chain</span>
+<h2 style="margin-top:16px">One platform, three winners</h2>
+<div class="who">
+<div class="card"><h3>Customers</h3><ul><li>Groceries, medicines and daily needs</li><li>Fast delivery from a shop they trust</li><li>Live tracking and easy reorders</li></ul></div>
+<div class="card"><h3>Local store owners</h3><ul><li>New online sales with no extra rent</li><li>Simple app, no technical skills needed</li><li>Keep your brand, your customers and your margins</li></ul></div>
+<div class="card"><h3>Delivery partners</h3><ul><li>Short trips, more deliveries per hour</li><li>Flexible shifts near home</li><li>Transparent earnings per order</li></ul></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap">
+<div class="band">
+<div><h2>Be part of the first lanes we light up</h2><p>Own a shop, run a delivery fleet or want to invest? Tell us a little about yourself and we will get back to you.</p></div>
+<form id="f">
+<input name="name" placeholder="Your name" required aria-label="Your name">
+<input name="phone" type="tel" placeholder="Phone or email" required aria-label="Phone or email">
+<select name="role" aria-label="I am a"><option>I own a local store</option><option>I want to deliver</option><option>I am a customer</option><option>Investor or partner</option></select>
+<input name="city" placeholder="City or area" aria-label="City or area">
+<button class="btn" style="background:#fff;color:var(--pd)" type="submit">Join early access</button>
+<span id="ok" role="status">Thank you. We will be in touch soon.</span>
+</form></div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+<h2>Common questions</h2>
+<div style="margin-top:30px">
+<details><summary>Do shops need any special equipment?</summary><p>No. A smartphone and an internet connection are enough to receive orders and manage stock.</p></details>
+<details><summary>How does Lowbazz make money?</summary><p>A small commission on each order and optional paid tools for shops, such as promotions and analytics.</p></details>
+<details><summary>Which cities will you launch in?</summary><p>We plan to begin with a few dense neighbourhoods and expand wherever local stores sign up.</p></details>
+<details><summary>What can customers order?</summary><p>Anything a participating local shop stocks, such as groceries, dairy, stationery and pharmacy items, subject to local regulations.</p></details>
+</div></div></section>
+</main>
+
+<footer><div class="wrap"><div><b style="color:var(--ink)">Lowbazz</b> · Quick commerce powered by local stores</div><div>© 2026 Lowbazz Technologies. All rights reserved.</div></div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();this.reset();document.getElementById('ok').style.display='block'});
+</script>
+</body>
+</html>
